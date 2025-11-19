@@ -50,7 +50,7 @@ uvicorn app.main:app --reload
 
 
 Структура проекта
-
+```
 ToDoList_FastAPI/
 ├── app/
 │   ├── main.py
@@ -81,3 +81,4 @@ ToDoList_FastAPI/
 ├── alembic.ini
 
 └── README.md
+```
