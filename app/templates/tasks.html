@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="user-greeting">
+    <h2>Привет, {{ user.name }}! 👋</h2>
+    <p>Вот твой список задач</p>
+</div>
+
+<!-- Форма добавления задачи -->
+<div style="background: #f7fafc; padding: 25px; border-radius: 15px; margin-bottom: 30px;">
+    <h3 style="margin-bottom: 20px; color: #2d3748;">➕ Добавить новую задачу</h3>
+    <form action="/task/add" method="post">
+        <div class="form-group">
+            <input type="text" name="title" placeholder="Название задачи" required>
+        </div>
+        <div class="form-group">
+            <textarea name="description" placeholder="Описание задачи (необязательно)" rows="3"></textarea>
+        </div>
+        <input type="hidden" name="user_id" value="{{ user.id }}">
+        <button type="submit" class="btn">Добавить задачу</button>
+    </form>
+</div>
+
+<!-- Список задач -->
+<div>
+    <h3 style="margin-bottom: 20px; color: #2d3748;">
+        📋 Мои задачи 
+        <span style="background: #667eea; color: white; padding: 5px 10px; border-radius: 20px; font-size: 0.8em;">
+            {{ tasks|length }}
+        </span>
+    </h3>
+    
+    {% if tasks %}
+        {% for task in tasks %}
+        <div class="task">
+            <h4>{{ task.title }}</h4>
+            <p>{{ task.description or "Нет описания" }}</p>
+            <div class="task-actions">
+                <form action="/task/delete/{{ task.id }}" method="post" style="display: inline;">
+                    <button type="submit" class="btn btn-danger">🗑️ Удалить</button>
+                </form>
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert">
+            🎉 Отлично! У вас пока нет задач. Добавьте первую задачу выше.
+        </div>
+    {% endif %}
+</div>
+
+<div class="logout">
+    <a href="/logout" class="link">🚪 Выйти из системы</a>
+</div>
+{% endblock %}
