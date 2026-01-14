@@ -1,6 +1,7 @@
 ﻿# ToDoList_site на FastAPI
 
 Веб-приложение для управления задачами с авторизацией и адаптивным интерфейсом.
+Проект включает полное покрытие тестами API-эндпоинтов и бизнес-логики с использованием pytest и асинхронных фикстур.
 
 ## Технологии
 
@@ -14,6 +15,11 @@
 - Jinja2 шаблоны
 - CSS
 - HTML5
+
+**Тестирование:**
+- pytest
+- pytest-asyncio
+- httpx
 
 ## Установка и запуск
 
@@ -56,6 +62,7 @@ ToDoList_FastAPI/
 │   ├── main.py
 │   ├── database.py
 │   ├── config.py
+│   ├── conftest.py
 │   ├── templates/
 │   │   ├── base.html
 │   │   ├── login.html
@@ -68,17 +75,22 @@ ToDoList_FastAPI/
 │   │   ├── auth.py
 │   │   ├── dao.py
 │   │   └── dependencise.py
-│   └── Tasks/
-│       ├── router.py
-│       ├── models.py
-│       ├── schemas.py
-│       └── dao.py
+│   ├── Tasks/
+│   │   ├── router.py
+│   │   ├── models.py
+│   │   ├── schemas.py
+│   │   └── dao.py
+│   ├── tests/
+│   │   ├── unit_tests/test_api.py
+│   │   ├── conftest.py
+│   │   ├── mock_tasks.json
+│   │   └── mock_users.json
 ├── migrations/
 │   ├── env.py
 │   ├── versions/
 │   └── script.py.mako
 ├── requirements.txt
 ├── alembic.ini
-
+├── pytest.ini
 └── README.md
 ```

@@ -1,0 +1,14 @@
+[
+    {
+        "name" : "Bob",
+        "hashed_password" : "$2b$12$SwAOsDqKYtjnvIcjlTAUvuX6KAxv/zUvqp8Y2oSctqVv4f/XCB2B1"
+    },
+    {
+        "name" : "Odi",
+        "hashed_password" : "$2b$12$ib8N/MddMjSxNs4UOF69c.Ku04CyglQHcNATYphcKJJn5rb1tYNF6" 
+    },
+    {
+        "name" : "Meln",
+        "hashed_password" : "$pbkdf2-sha256$29000$xBgDgFDKWcvZ.18L4Rwj5A$5dhhztXZGGO5xIYewqkIBqGnukN5Hf4sxHW/aYT/8TE"  
+    }
+]
